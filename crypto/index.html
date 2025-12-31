@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Crypto Tracker</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <h1>Dashboard Krypto-Inwestora</h1>
+
+  <section>
+    <h2>Top 50 kryptowalut</h2>
+    <button id="sortAsc">Sortuj ↑</button>
+    <button id="sortDesc">Sortuj ↓</button>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Nazwa</th>
+          <th>Cena (USD)</th>
+          <th>Zmiana 24h (%)</th>
+        </tr>
+      </thead>
+      <tbody id="crypto-table"></tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Kalkulator BTC</h2>
+    <input type="number" id="plnInput" placeholder="Kwota w PLN" />
+    <button id="calcBtn">Przelicz</button>
+    <p id="calcResult"></p>
+  </section>
+
+  <section>
+    <h2>Wykres 7 dni</h2>
+    <canvas id="chart"></canvas>
+  </section>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
