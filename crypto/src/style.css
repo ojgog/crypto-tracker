@@ -1,4 +1,3 @@
-/* === GLOBAL === */
 * {
   box-sizing: border-box;
 }
@@ -23,7 +22,6 @@ h2 {
   color: #334155;
 }
 
-/* === SECTIONS === */
 section {
   background: #ffffff;
   padding: 20px 25px;
@@ -32,7 +30,6 @@ section {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-/* === TABLE === */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -62,7 +59,6 @@ tbody tr:hover {
   transition: background-color 0.2s ease;
 }
 
-/* === BUTTONS === */
 button {
   background: #2563eb;
   color: #ffffff;
@@ -83,7 +79,6 @@ button:active {
   transform: scale(0.97);
 }
 
-/* === INPUT === */
 input[type="number"] {
   padding: 8px;
   width: 200px;
@@ -99,20 +94,17 @@ input[type="number"]:focus {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
 }
 
-/* === CALCULATOR RESULT === */
 #calcResult {
   margin-top: 10px;
   font-weight: bold;
   color: #16a34a;
 }
 
-/* === CHART === */
 canvas {
   margin-top: 20px;
   max-width: 100%;
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 768px) {
   body {
     padding: 15px;
@@ -125,4 +117,58 @@ canvas {
   button {
     margin-top: 5px;
   }
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.controls button {
+  margin-right: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+#tableStatus,
+#chartStatus {
+  color: #475569;
+}
+
+#crypto-table tr:focus-visible {
+  outline: 3px solid #2563eb;
+  outline-offset: -3px;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.chart-wrap {
+  height: 340px;
+}
+
+footer {
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
+}
+
+footer a {
+  color: inherit;
 }

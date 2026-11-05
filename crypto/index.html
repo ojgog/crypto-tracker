@@ -1,42 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-  <meta charset="UTF-8" />
-  <title>Crypto Tracker</title>
-  <link rel="stylesheet" href="/style.css" />
-</head>
-<body>
-  <h1>Dashboard Krypto-Inwestora</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Tracker</title>
+  </head>
+  <body>
+    <main>
+      <h1>Dashboard Krypto-Inwestora</h1>
 
-  <section>
-    <h2>Top 50 kryptowalut</h2>
-    <button id="sortAsc">Sortuj ↑</button>
-    <button id="sortDesc">Sortuj ↓</button>
+      <section>
+        <h2>Top 50 kryptowalut</h2>
+        <div class="controls">
+          <button id="sortAsc" type="button">Sortuj ↑</button>
+          <button id="sortDesc" type="button">Sortuj ↓</button>
+        </div>
+        <p id="tableStatus" role="status">Ładowanie danych...</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nazwa</th>
+                <th>Cena (USD)</th>
+                <th>Zmiana 24h (%)</th>
+              </tr>
+            </thead>
+            <tbody id="crypto-table"></tbody>
+          </table>
+        </div>
+      </section>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Nazwa</th>
-          <th>Cena (USD)</th>
-          <th>Zmiana 24h (%)</th>
-        </tr>
-      </thead>
-      <tbody id="crypto-table"></tbody>
-    </table>
-  </section>
+      <section>
+        <h2>Kalkulator BTC</h2>
+        <label for="plnInput">Kwota w PLN</label>
+        <div class="controls">
+          <input type="number" id="plnInput" min="0" step="any" placeholder="Np. 100" />
+          <button id="calcBtn" type="button">Przelicz</button>
+        </div>
+        <p id="calcResult" role="status"></p>
+      </section>
 
-  <section>
-    <h2>Kalkulator BTC</h2>
-    <input type="number" id="plnInput" placeholder="Kwota w PLN" />
-    <button id="calcBtn">Przelicz</button>
-    <p id="calcResult"></p>
-  </section>
+      <section>
+        <h2>Wykres 7 dni</h2>
+        <p id="chartStatus" role="status">Kliknij kryptowalutę w tabeli, aby zobaczyć wykres.</p>
+        <div class="chart-wrap"><canvas id="chart"></canvas></div>
+      </section>
 
-  <section>
-    <h2>Wykres 7 dni</h2>
-    <canvas id="chart"></canvas>
-  </section>
-
-  <script type="module" src="/src/main.js"></script>
-</body>
+      <footer>Dane rynkowe: <a href="https://www.coingecko.com/" target="_blank" rel="noopener noreferrer">CoinGecko</a>. Dostępność danych zależy od API.</footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>
